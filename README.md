@@ -6,7 +6,7 @@ Para rodar o nosso banco de dados você deve rodar nessa ordem:
 |          1-LIVRO                |
 |          2-USUÁRIO              |
 |          3-EMPRÉSTIMO           |
-|          4-Gênero               |
+|          4-GÊNERO               |
 |          5-USUARIO_LIVRO        |
-|          6-Multa                |
+|          6-MULTA                |
 -----------------------------------
