@@ -1,17 +1,19 @@
-CREATE TABLE emprestimo (
-    Cod_Emprestimo INT NOT NULL,
-    Cod_Livro INT NOT NULL,
-    data_emprestimo DATE,
-    data_devolucao DATE,
-    cod_usuario INT NOT NULL,
-    CONSTRAINT PK_Emprestimo PRIMARY KEY (Cod_Emprestimo),
-    CONSTRAINT FK_Livro_Emprestimo FOREIGN KEY (Cod_Livro)
-        REFERENCES livro (Cod_Livro),
-    CONSTRAINT FK_Usuario_emprestimo FOREIGN KEY (cod_usuario)
-        REFERENCES usuario (cod_usuario)
+create table emprestimo(
+Cod_Emprestimo int not null, 
+-- Int not null significa que ele tem que ser inteiro e não pode ser vazio
+Cod_Livro int not null,
+data_emprestimo date, -- date é usado para datas
+data_devolucao date, 
+cod_usuario int not null, 
+
+constraint PK_Emprestimo primary key (Cod_Emprestimo), -- transformou o "Cod_Emprestimo" em chave primaria
+constraint FK_Livro_Emprestimo foreign key (Cod_Livro) references livro (Cod_Livro),  
+-- puxa uma chave estrangeira na tabela atual, chamada FK_Usuario_emprestimo 
+constraint FK_Usuario_emprestimo foreign key (cod_usuario) references usuario (cod_usuario) 
 );
 
-INSERT INTO emprestimo (Cod_Emprestimo, Cod_Livro, data_emprestimo, data_devolucao, cod_usuario) VALUES
+INSERT INTO emprestimo (Cod_Emprestimo, Cod_Livro, data_emprestimo, data_devolucao, cod_usuario) VALUES 
+-- aqui são as informações dos emprestimos
 (5001, 101, '2024-02-15', '2024-03-01', 1001),
 (5002, 105, '2024-01-20', '2024-02-05', 1002),
 (5003, 110, '2024-03-10', '2024-03-25', 1003),
@@ -42,6 +44,7 @@ INSERT INTO emprestimo (Cod_Emprestimo, Cod_Livro, data_emprestimo, data_devoluc
 (5028, 151, '2024-02-18', '2024-03-04', 1028),
 (5029, 137, '2024-01-08', '2024-01-23', 1029),
 (5030, 121, '2024-03-20', '2024-04-04', 1030),
+
 (5031, 111, '2024-03-01', '2024-03-16', 1001),
 (5032, 133, '2024-01-10', '2024-01-25', 1002),
 (5033, 153, '2024-03-30', '2024-04-14', 1003),
@@ -52,6 +55,7 @@ INSERT INTO emprestimo (Cod_Emprestimo, Cod_Livro, data_emprestimo, data_devoluc
 (5038, 144, '2024-01-17', '2024-02-01', 1008),
 (5039, 106, '2024-03-27', '2024-04-11', 1009),
 (5040, 131, '2024-02-12', '2024-02-27', 1010),
+
 (5041, 158, '2024-01-07', '2024-01-22', 1001),
 (5042, 122, '2024-03-02', '2024-03-17', 1002),
 (5043, 146, '2024-02-19', '2024-03-05', 1003),

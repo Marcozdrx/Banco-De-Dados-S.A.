@@ -1,14 +1,15 @@
 CREATE TABLE Livro (
-    Cod_Livro INT NOT NULL,
+    Cod_Livro INT NOT NULL, -- inteiro e não nulo
     nome VARCHAR(50),
-    ISBN CHAR(15),
-    estoque INT,
-    sinopse VARCHAR(100),
+    ISBN CHAR(15), -- char serve para armazenar uma pequena quantidade de dados
+    estoque INT, -- int é para apenas valores inteiros
+    sinopse VARCHAR(100), -- armazenar grandes limites de caracteres
     classificacao VARCHAR(3),
-    CONSTRAINT PK_livro PRIMARY KEY (Cod_Livro)
+    CONSTRAINT PK_livro PRIMARY KEY (Cod_Livro) -- transformou em chave primaria
 );
 
 INSERT INTO Livro (Cod_Livro, nome, ISBN, estoque, sinopse, classificacao) VALUES
+-- valores de todos os livros
 (101, 'O Senhor dos Anéis', '9788533613379', 15, 'Aventura épica em um mundo de fantasia.', '14+'),
 (102, 'Dom Casmurro', '9788506039175', 22, 'Clássico da literatura brasileira que explora ciúme e traição.', '12+'),
 (103, 'Harry Potter e a Pedra Filosofal', '9788532530783', 18, 'Jovem bruxo descobre um mundo mágico.', '10+'),

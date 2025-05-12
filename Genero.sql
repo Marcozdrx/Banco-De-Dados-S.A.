@@ -1,11 +1,15 @@
 CREATE TABLE genero (
     Cod_Genero INT NOT NULL,
-    Cod_Livro INT NOT NULL,
+    -- Int not null significa que ele tem que ser inteiro e não pode ser vazio
+    Cod_Livro int not null,
     caracteristicas TEXT,
-    subgenero VARCHAR(35),
-    CONSTRAINT pk_genero PRIMARY KEY (Cod_Genero),
-    CONSTRAINT FK_Livro_genero FOREIGN KEY (Cod_Livro)
-        REFERENCES Livro (Cod_Livro)
+     -- TEXT é usado para armazenar grandes blocos de texto,
+     -- como descrições, sinopses, comentários ou conteúdos extensos que não caberiam em um campo VARCHAR comum.
+    subgenero VARCHAR(35), -- é usado em bancos de dados para armazenar textos curtos ou de tamanho limitado,
+    -- como nomes, títulos ou e-mails.
+    CONSTRAINT pk_genero PRIMARY KEY (Cod_Genero), -- transformou (Cod_Genero) em chave primaria
+    constraint FK_Livro_genero foreign key (Cod_Livro) references Livro (Cod_Livro) -- esta puxando a chave primaria (Cod_livro)
+    -- e esta transformando em chave estrangeira
 );
 INSERT INTO genero (Cod_Genero, Cod_Livro, caracteristicas, subgenero) VALUES
 (201, 101, 'Narrativa épica com elementos de fantasia e jornada do herói', 'Fantasia Épica'),
