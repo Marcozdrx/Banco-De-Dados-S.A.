@@ -1,10 +1,11 @@
 CREATE TABLE genero (
     Cod_Genero INT NOT NULL,
-    Cod_Livro int not null,
+    Cod_Livro INT NOT NULL,
     caracteristicas TEXT,
     subgenero VARCHAR(35),
     CONSTRAINT pk_genero PRIMARY KEY (Cod_Genero),
-    constraint FK_Livro_genero foreign key (Cod_Livro) references Livro (Cod_Livro)
+    CONSTRAINT FK_Livro_genero FOREIGN KEY (Cod_Livro)
+        REFERENCES Livro (Cod_Livro)
 );
 INSERT INTO genero (Cod_Genero, Cod_Livro, caracteristicas, subgenero) VALUES
 (201, 101, 'Narrativa épica com elementos de fantasia e jornada do herói', 'Fantasia Épica'),
