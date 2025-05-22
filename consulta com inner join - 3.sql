@@ -1,12 +1,11 @@
--- Listar o nome do livro, data de devolução e o telefone do usuário que fez o empréstimo
-
--- Selecionando os dados para a consulta e nomeando-os 
 SELECT 
-    l.nome AS Livro,
-    e.data_devolucao AS DataDevolucao,
-    u.telefone AS TelefoneUsuario
-
--- Juntando as tabelas e dando as condições para evitar redundancias de dados
-FROM emprestimo e
-INNER JOIN livro l ON e.Cod_Livro = l.Cod_Livro
-INNER JOIN usuario u ON u.Cod_Emprestimo = e.Cod_Emprestimo;
+    livro.nome as 'Nome do Livro', usuario.nomeusuario as 'Nome do Usuario', Cod_Emprestimo
+FROM
+    livro
+        INNER JOIN
+    usuario
+        INNER JOIN
+    emprestimo
+WHERE
+    livro.cod_livro = emprestimo.cod_livro
+        AND usuario.cod_usuario = emprestimo.cod_usuario 
