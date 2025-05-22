@@ -1,23 +1,13 @@
--- Criando a tabela multa
 CREATE TABLE multa (
-	-- Declaranod como não nulo as chaves primarias
     Cod_Multa INT NOT NULL,
-    Cod_Usuario INT NOT NULL,
-    Cod_Emprestimo INT NOT NULL,
+    Cod_Usuario int not null,
+    Cod_Emprestimo int not null,
     data_multa DATE,
     valor DECIMAL(5 , 2 ),
-    
-    -- Declarando a chave primaria
     CONSTRAINT PK_multa PRIMARY KEY (Cod_multa),
-    
-    -- Declarando as chaves estrangeiras
-    CONSTRAINT FK_Usuario_multa FOREIGN KEY (Cod_Usuario)
-        REFERENCES usuario (Cod_Usuario),
-    CONSTRAINT FK_Emprestimo_Livro FOREIGN KEY (Cod_Emprestimo)
-        REFERENCES emprestimo (Cod_Emprestimo)
+    CONSTRAINT FK_Usuario_multa FOREIGN KEY (Cod_Usuario) REFERENCES usuario (Cod_Usuario),
+    constraint FK_Emprestimo_Livro foreign key (Cod_Emprestimo) references emprestimo (Cod_Emprestimo)
 );
-
--- Inserindo os dados conforme as ordens das colunas
 INSERT INTO multa (Cod_Multa, Cod_Usuario, Cod_Emprestimo, data_multa, valor) VALUES
 (7001, 1005, 5005, '2024-01-25', 2.50),
 (7002, 1008, 5008, '2024-02-17', 1.75),
