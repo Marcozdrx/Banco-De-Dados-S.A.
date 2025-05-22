@@ -1,21 +1,12 @@
-
--- Criando a tabela usuario
 CREATE TABLE usuario_livro (
-
-    -- Declarando a chave primaria como não nulo
     cod_usuario INT NOT NULL,
     cod_livro INT NOT NULL,
     emprestimos DATE,
     multa DECIMAL(5 , 2 ),
-
-    -- Declarando a chave primaria
-    CONSTRAINT fk_cod_usuario_livro FOREIGN KEY (cod_usuario) 
-        REFERENCES usuario (cod_usuario),
-    CONSTRAINT fk_cod_Livo_usuario_livro FOREIGN KEY (cod_livro) 
-        REFERENCES livro (cod_livro)
+    CONSTRAINT fk_cod_usuario_livro FOREIGN KEY (cod_usuario) REFERENCES usuario (cod_usuario),
+    CONSTRAINT fk_cod_Livo_usuario_livro FOREIGN KEY (cod_livro) REFERENCES livro (cod_livro)
 );
 
--- Inserindo os dados conforme a ordem das colunas
 INSERT INTO usuario_livro (cod_usuario, cod_livro, emprestimos, multa) VALUES
 (1001, 101, '2024-02-15', 0.00),
 (1002, 105, '2024-01-20', 0.00),
