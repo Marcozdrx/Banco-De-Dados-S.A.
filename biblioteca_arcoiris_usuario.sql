@@ -1,18 +1,13 @@
--- Criando a tabela usuario
 CREATE TABLE usuario (
-	-- Declarando as chaves primarias como não nulos
     Cod_Usuario INT NOT NULL,
-    cpf INT NOT NULL,
-    nomeusario VARCHAR(35),
+    cpf int not null,
+    nomeusuario VARCHAR(35),
     senhausuario VARCHAR(35),
     telefone INT,
     
-    -- Declarando a chave primaria
     CONSTRAINT pk_usuario PRIMARY KEY (Cod_Usuario)
 );
-
--- Inserindo os dados conforme a ordem das colunas
-INSERT INTO usuario (Cod_Usuario, cpf, nomeusario, senhausuario, telefone) VALUES 
+INSERT INTO usuario (Cod_Usuario, cpf, nomeusuario, senhausuario, telefone) VALUES 
 (1001, 12345678, 'Maria Silva', 'senha123', 955556789),
 (1002, 98765432, 'João Santos', 'jo@o2023', 978901234),
 (1003, 45678901, 'Ana Pereira', 'an@P3r', 945678901),
@@ -73,4 +68,3 @@ INSERT INTO usuario (Cod_Usuario, cpf, nomeusario, senhausuario, telefone) VALUE
 (1058, 34567890, 'Vivian Teixeira', 'vivi@n', 934567890),
 (1059, 78901234, 'Wilson Ribeiro', 'wils0n', 978901234),
 (1060, 23456789, 'Xuxa Sousa', 'xux@', 923456789)
-
